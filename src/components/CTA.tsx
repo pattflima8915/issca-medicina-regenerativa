@@ -52,8 +52,12 @@ export default function CTA() {
 <input
   type="hidden"
   name="_next"
-  value={`${window.location.origin}/#inscricao`}
-/>                    <h3 className="font-display text-[17px] font-bold tracking-tight text-white">
+ value={`${window.location.origin}/?enviado=1#inscricao`}
+/>   {new URLSearchParams(window.location.search).get("enviado") === "1" && (
+  <p role="status" className="rounded-xl bg-green-900/40 p-4 text-sm text-green-200">
+    Solicitação enviada com sucesso! Nossa equipe entrará em contato com você.
+  </p>
+)}                 <h3 className="font-display text-[17px] font-bold tracking-tight text-white">
                       Receber informações do curso
                     </h3>
 

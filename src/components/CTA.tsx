@@ -48,7 +48,11 @@ export default function CTA() {
                   <form action="https://formsubmit.co/pyissca@gmail.com" method="POST" className="space-y-4">
                     <input type="hidden" name="_subject" value="ISSCA Brasil — solicitação de informações do curso" />
                     <input type="hidden" name="_template" value="table" />
-                    <h3 className="font-display text-[17px] font-bold tracking-tight text-white">
+<input
+  type="hidden"
+  name="_next"
+  value={`${window.location.origin}/#inscricao`}
+/>                    <h3 className="font-display text-[17px] font-bold tracking-tight text-white">
                       Receber informações do curso
                     </h3>
 

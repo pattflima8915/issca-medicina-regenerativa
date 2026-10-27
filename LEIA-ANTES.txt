@@ -1,0 +1,13 @@
+SITE ISSCA BRASIL — INSTRUÇÕES
+
+Este pacote contém o código-fonte e a pasta dist com o site compilado.
+
+GITHUB: descompacte o ZIP e envie para a raiz do repositório todo o conteúdo da pasta. Não envie a pasta node_modules. O comando de instalação é npm ci; o comando de construção é npm run build; o diretório de saída é dist. No Hostinger, configure a implantação conforme o tipo de hospedagem escolhido. Se usar Gerenciador de Arquivos, envie o conteúdo de dist, e não o projeto completo.
+
+FORMULÁRIO: usa FormSubmit para enviar informações para pyissca@gmail.com. Após publicar em um endereço web, preencha uma solicitação de teste; procure o e-mail de ativação no Gmail, confirme, e faça novo teste para verificar o recebimento. O envio ainda não foi testado em produção. O serviço processa e armazena dados conforme suas próprias políticas. Revise a política de privacidade da instituição.
+
+MATRÍCULA: os botões das duas opções abrem WhatsApp para (41) 99533-7000 com mensagem identificando a opção. Confirme esse número antes de publicar. Quando tiver os links Asaas, substitua os endereços no arquivo src/components/Pricing.tsx e publique novamente.
+
+FOTOS: as sete imagens recebidas estão em fotos-recebidas. Seus arquivos não identificam os professores, então não foram associadas aos nomes. Confirme cada identidade antes de adicioná-las. A lista existente também precisa de conferência quanto a nomes possivelmente repetidos.
+
+REVISÃO ANTES DE PUBLICAR: confirme preços, parcelas, turma, carga horária, ementa, docentes, certificação, condições da imersão e informações institucionais. Os valores e alegações são os do projeto original e não foram verificados. O certificado não deve ser confundido com título de especialista ou autorização de prática.

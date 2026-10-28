@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Aurora, Reveal } from "./primitives";
 import { IconArrow, IconBook, IconPlane, IconVideo } from "./icons";
 import { IssCaLogo } from "./Logo";
@@ -9,6 +10,12 @@ const perks = [
 ];
 
 export default function CTA() {
+  const [origin, setOrigin] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  useEffect(() => {
+    setOrigin(window.location.origin);
+    setSubmitted(new URLSearchParams(window.location.search).get("enviado") === "1");
+  }, []);
   return (
     <section id="inscricao" className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
@@ -52,8 +59,8 @@ export default function CTA() {
 <input
   type="hidden"
   name="_next"
- value={`${window.location.origin}/?enviado=1#inscricao`}
-/>   {new URLSearchParams(window.location.search).get("enviado") === "1" && (
+ value={`${origin}/?enviado=1#inscricao`}
+/>   {submitted && (
   <p role="status" className="rounded-xl bg-green-900/40 p-4 text-sm text-green-200">
     Solicitação enviada com sucesso! Nossa equipe entrará em contato com você.
   </p>
@@ -170,3 +177,4 @@ function Field({
     </div>
   );
 }
+

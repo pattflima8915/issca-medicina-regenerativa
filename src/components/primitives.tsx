@@ -220,7 +220,11 @@ export function CountUp({
   suffix = "",
   prefix = "",
   decimals = 0,
-  duration = 1800,
+  duration = 1200,
+  /** Skip the "wait until scrolled into view" step — use for content that is
+   * already visible on first paint (e.g. hero stats), so the user never sees
+   * a frozen "0" while waiting for an IntersectionObserver to fire. */
+  immediate = false,
   className,
 }: {
   to: number;
@@ -228,13 +232,30 @@ export function CountUp({
   prefix?: string;
   decimals?: number;
   duration?: number;
+  immediate?: boolean;
   className?: string;
 }) {
-  const { ref, inView } = useInView<HTMLSpanElement>({ threshold: 0.4 });
+  // Lower threshold + negative rootMargin so the stat only waits for a
+  // sliver of itself to be visible, instead of needing 40% in frame.
+  const { ref, inView } = useInView<HTMLSpanElement>({ threshold: 0.1, rootMargin: "0px 0px 0px 0px" });
+  const shouldAnimate = immediate || inView;
   const [value, setValue] = useState(0);
+  const [reduceMotion, setReduceMotion] = useState(false);
 
   useEffect(() => {
-    if (!inView) return;
+    if (typeof window === "undefined" || !window.matchMedia) return;
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReduceMotion(mq.matches);
+  }, []);
+
+  useEffect(() => {
+    if (!shouldAnimate) return;
+    // Respect reduced-motion preference and avoid an unnecessary animation:
+    // jump straight to the final value.
+    if (reduceMotion) {
+      setValue(to);
+      return;
+    }
     let raf = 0;
     const start = performance.now();
     const tick = (now: number) => {
@@ -245,7 +266,7 @@ export function CountUp({
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
-  }, [inView, to, duration]);
+  }, [shouldAnimate, reduceMotion, to, duration]);
 
   return (
     <span ref={ref} className={className}>

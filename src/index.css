@@ -33,6 +33,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 6.5rem;
     -webkit-text-size-adjust: 100%;
   }
 
@@ -290,3 +291,6 @@
     transform: none;
   }
 }
+
+/* Keep section headings below the fixed navigation when following anchors. */
+section[id] { scroll-margin-top: 1rem; }

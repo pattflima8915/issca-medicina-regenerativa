@@ -126,7 +126,7 @@ export default function Showcase() {
   const eixo = eixos[current.eixo];
 
   return (
-    <section id="modulos" className="relative py-24 sm:py-32">
+    <section id="modulos" className="relative pt-12 pb-20 sm:pt-16 sm:pb-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
           align="left"

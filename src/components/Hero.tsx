@@ -14,7 +14,7 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section id="top" className="relative isolate overflow-hidden pb-20 pt-32 sm:pt-40 lg:pb-28 lg:pt-44">
+    <section id="top" className="relative isolate overflow-hidden pb-20 pt-32 sm:pt-36 lg:pb-28 lg:pt-36">
       <Aurora />
       <div aria-hidden className="absolute inset-0 grid-lines opacity-70" />
       <div
@@ -22,7 +22,7 @@ export default function Hero() {
         className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-300/50 to-transparent"
       />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-5 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
         {/* -------- Copy -------- */}
         <div className="max-w-2xl">
           <div className="anim-rise" style={{ animationDelay: "80ms" }}>
@@ -30,14 +30,14 @@ export default function Hero() {
           </div>
 
           <h1
-            className="anim-rise mt-7 font-display text-[clamp(2.3rem,6vw,4.25rem)] font-extrabold leading-[1.02] tracking-[-0.042em] text-white"
+            className="anim-rise mt-7 font-display text-[clamp(2rem,3.6vw,3rem)] font-extrabold leading-[1.12] tracking-[-0.042em] text-white"
             style={{ animationDelay: "180ms" }}
           >
             <span className="text-shimmer">Medicina Regenerativa:</span> conhecimento para avaliar evidências e ampliar sua formação
           </h1>
 
           <p
-            className="anim-rise mt-7 max-w-xl text-[16px] leading-relaxed text-slate-400 sm:text-[18px]"
+            className="anim-rise mt-5 max-w-xl text-[16px] leading-relaxed text-slate-400 sm:text-[16px]"
             style={{ animationDelay: "300ms" }}
           >
             Certificação para médicos, sob responsabilidade da ISSCA Internacional, com 360 horas e 12 módulos EAD. Conteúdo com professores nacionais e internacionais, webinar ao vivo mensal, fórum de discussão e mentoria em grupo.

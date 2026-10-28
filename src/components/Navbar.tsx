@@ -37,15 +37,15 @@ export default function Navbar() {
   }, [open]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50">
-      <div className={cn("transition-all duration-500", scrolled ? "px-3 pt-3 sm:px-5 sm:pt-4" : "px-0 pt-0")}>
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink-950">
+      <div className={cn("transition-all duration-500", scrolled ? "px-3 pt-0 sm:px-5" : "px-0 pt-0")}>
         <nav
           aria-label="Navegação principal"
           className={cn(
-            "mx-auto flex items-center justify-between transition-all duration-500",
+            "relative z-50 mx-auto flex items-center justify-between transition-all duration-500",
             scrolled
-              ? "glass max-w-6xl rounded-2xl px-3 py-2 shadow-[0_20px_60px_-28px_rgba(0,0,0,0.9)] sm:px-4"
-              : "max-w-7xl border-b border-white/[0.06] bg-ink-950/50 px-4 py-3.5 backdrop-blur-md sm:px-8",
+              ? "max-w-7xl bg-ink-950 px-3 py-1 shadow-[0_20px_60px_-28px_rgba(0,0,0,0.9)] sm:px-4"
+              : "max-w-7xl border-b border-white/[0.06] bg-ink-950 px-4 py-2 sm:px-8",
           )}
         >
           <BrandLink />

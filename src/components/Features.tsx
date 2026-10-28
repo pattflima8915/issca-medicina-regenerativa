@@ -6,13 +6,13 @@ const features = [
     icon: IconClock,
     tag: "Carga horária",
     title: "360 horas de formação completa",
-    body: "Um percurso denso e progressivo, da biologia do envelhecimento à produção científica, pensado para resultados clínicos reais.",
+    body: "Um percurso denso e progressivo, da biologia do envelhecimento à produção científica, voltado à avaliação crítica de fundamentos, aplicações e pesquisa.",
   },
   {
     icon: IconVideo,
     tag: "Ensino EAD",
     title: "12 módulos 100% a distância",
-    body: "Estude no seu ritmo, com aulas dinâmicas, casos clínicos e acompanhamento da coordenação.",
+    body: "Conteúdo EAD, webinar ao vivo mensal, fórum sobre o módulo do mês e discussão em grupo com mentoria mensal.",
   },
   {
     icon: IconUsers,
@@ -35,8 +35,8 @@ const features = [
   {
     icon: IconGlobe,
     tag: "Opcional",
-    title: "Acesso à pós ISSCA americana",
-    body: "Conteúdo online da pós-graduação ISSCA dos Estados Unidos, com os melhores especialistas do mundo. Incluído na Opção 2.",
+    title: "Acesso à formação ISSCA americana",
+    body: "Conteúdo online da certificação ISSCA dos Estados Unidos, com os professores internacionais. Incluído na Opção 2.",
   },
 ];
 
@@ -55,7 +55,7 @@ export default function Features() {
               Muito mais que 360 horas de <span className="text-gradient">conteúdo de ponta</span>
             </>
           }
-          description="Uma formação desenhada para médicos que querem liderar a Medicina Regenerativa no Brasil, com ciência, prática e conexão internacional."
+          description="Uma certificação para médicos, com estudo de diferentes especialidades, atividades dirigidas e discussão com professores."
         />
 
         <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

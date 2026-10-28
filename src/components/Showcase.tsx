@@ -18,7 +18,7 @@ const modules: Module[] = [
     eixo: "I",
     title: "Fundamentos da Medicina Regenerativa e Biologia do Envelhecimento",
     short: "Fundamentos e envelhecimento",
-    body: "A base científica do campo: como células e tecidos respondem à lesão e ao envelhecimento, e o que a evidência atual realmente sustenta.",
+    body: "Estudo dos fundamentos da Medicina Regenerativa e da biologia do envelhecimento, com avaliação crítica de conceitos e evidências.",
     chips: ["Biologia celular", "Senescência", "Evidência científica"],
   },
   {
@@ -26,7 +26,7 @@ const modules: Module[] = [
     eixo: "I",
     title: "Terapias Celulares Avançadas — Células-tronco",
     short: "Terapias celulares avançadas",
-    body: "Origem, classificação e aplicações das células-tronco, com critérios de seleção, processamento e segurança do paciente.",
+    body: "Estudo dos tipos de células-tronco e das terapias celulares avançadas, com discussão de evidências, segurança e limitações.",
     chips: ["Células-tronco", "SVF", "Segurança"],
   },
   {
@@ -34,7 +34,7 @@ const modules: Module[] = [
     eixo: "I",
     title: "Nutrologia e Terreno Biológico — Modulação Hormonal e Inflamação Sistêmica",
     short: "Nutrologia e terreno biológico",
-    body: "Como nutrição, hormônios e inflamação sistêmica formam o terreno que determina a resposta a qualquer tratamento regenerativo.",
+    body: "Estudo das relações entre nutrição, modulação hormonal e inflamação sistêmica no contexto da Medicina Regenerativa.",
     chips: ["Nutrologia", "Modulação hormonal", "Inflamação sistêmica"],
   },
   {
@@ -42,7 +42,7 @@ const modules: Module[] = [
     eixo: "II",
     title: "Terapias Biológicas Aplicadas — PRP, PRF, Exossomos e Secretoma",
     short: "PRP, PRF, exossomos e secretoma",
-    body: "Preparo, indicação e aplicação das terapias biológicas mais utilizadas, com foco em protocolos reprodutíveis e resultados mensuráveis.",
+    body: "Estudo de PRP, PRF, exossomos e secretoma, com discussão das evidências disponíveis, limitações, segurança e contexto regulatório.",
     chips: ["PRP", "PRF", "Exossomos"],
   },
   {
@@ -50,7 +50,7 @@ const modules: Module[] = [
     eixo: "II",
     title: "Ortobiologia e Sistema Musculoesquelético — Aplicações Práticas e Reabilitação",
     short: "Ortobiologia e musculoesquelético",
-    body: "Do diagnóstico à reabilitação: aplicações práticas em articulações, tendões e lesões musculares com integração ao plano terapêutico.",
+    body: "Discussão de ortobiologia, sistema musculoesquelético e reabilitação, considerando evidências e limites das aplicações estudadas.",
     chips: ["Articulações", "Tendões", "Reabilitação"],
   },
   {
@@ -58,7 +58,7 @@ const modules: Module[] = [
     eixo: "II",
     title: "Dermatologia e Estética Regenerativa — Rejuvenescimento e Reparo Cutâneo",
     short: "Dermatologia e estética regenerativa",
-    body: "Rejuvenescimento e reparo da pele com base em biologia tecidual, indicações precisas e cuidados em cada etapa do procedimento.",
+    body: "Estudo da biologia do reparo cutâneo e dos temas de dermatologia e estética regenerativa, com discussão crítica das abordagens.",
     chips: ["Rejuvenescimento", "Reparo cutâneo", "Cicatrização"],
   },
   {
@@ -66,7 +66,7 @@ const modules: Module[] = [
     eixo: "II",
     title: "Regenerativa e Especialidades — Neurologia e Cardiologia",
     short: "Neurologia e cardiologia",
-    body: "Panorama das aplicações regenerativas em neurologia e cardiologia, com leitura crítica da literatura e critérios de indicação.",
+    body: "Panorama da pesquisa em neurologia e cardiologia, distinguindo resultados publicados, hipóteses e limitações.",
     chips: ["Neurologia", "Cardiologia", "Evidência"],
   },
   {
@@ -74,7 +74,7 @@ const modules: Module[] = [
     eixo: "II",
     title: "Oncologia Regenerativa, Imunoterapia e Fronteiras do Câncer",
     short: "Oncologia regenerativa e imunoterapia",
-    body: "As fronteiras entre regeneração, imunoterapia e câncer, com foco em segurança e integração responsável à oncologia convencional.",
+    body: "Discussão de oncologia, imunoterapia e fronteiras da pesquisa, considerando evidências, segurança e limites de interpretação.",
     chips: ["Imunoterapia", "Fronteiras", "Segurança"],
   },
   {
@@ -82,7 +82,7 @@ const modules: Module[] = [
     eixo: "II",
     title: "Manejo da Dor na Medicina Regenerativa",
     short: "Manejo da dor",
-    body: "Estratégias regenerativas para dor crônica e musculoesquelética, incluindo infiltrações, seleção de pacientes e acompanhamento.",
+    body: "Estudo do manejo da dor e das abordagens discutidas em Medicina Regenerativa, com análise de evidências e acompanhamento.",
     chips: ["Dor crônica", "Infiltrações", "Acompanhamento"],
   },
   {
@@ -90,7 +90,7 @@ const modules: Module[] = [
     eixo: "II",
     title: "Medicina Regenerativa no Esporte e Alta Performance",
     short: "Esporte e alta performance",
-    body: "Recuperação, prevenção de lesões e otimização do desempenho de atletas com protocolos regenerativos supervisionados.",
+    body: "Discussão da Medicina Regenerativa no esporte e na alta performance, com avaliação crítica de aplicações e limitações.",
     chips: ["Atletas", "Recuperação", "Performance"],
   },
   {
@@ -98,7 +98,7 @@ const modules: Module[] = [
     eixo: "III",
     title: "Peptídeos e Biohacking",
     short: "Peptídeos e biohacking",
-    body: "Peptídeos bioativos e estratégias de biohacking: mecanismos, evidências, limites e protocolos de acompanhamento.",
+    body: "Estudo de peptídeos e biohacking, com discussão de mecanismos, evidências, segurança e contexto regulatório.",
     chips: ["Peptídeos", "Biohacking", "Protocolos"],
   },
   {
@@ -106,7 +106,7 @@ const modules: Module[] = [
     eixo: "III",
     title: "Produção Científica em Pesquisa Clínica",
     short: "Produção científica e pesquisa",
-    body: "Do desenho do estudo à publicação: como conduzir pesquisa clínica, documentar casos e contribuir com a evolução do campo.",
+    body: "Fundamentos da produção científica em pesquisa clínica: desenho de estudos, leitura crítica e organização de trabalhos científicos.",
     chips: ["Pesquisa clínica", "Metodologia", "Publicação"],
   },
 ];
@@ -133,7 +133,7 @@ export default function Showcase() {
           eyebrow="Grade curricular"
           title={
             <>
-              12 módulos em <span className="text-gradient">3 eixos</span> para dominar a prática regenerativa
+              12 módulos em <span className="text-gradient">3 eixos</span> para ampliar sua formação médica
             </>
           }
           description="Uma trilha progressiva: primeiro a ciência, depois as terapias, por fim as aplicações clínicas e as fronteiras do campo."

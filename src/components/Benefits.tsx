@@ -44,8 +44,8 @@ const journey = [
 ];
 
 const takeaways = [
-  { tag: "Opção 1", text: "Pós-graduação EAD ISSCA Brasil, com 360 horas e 12 módulos" },
-  { tag: "Opção 2", text: "Pós EAD ISSCA Brasil + conteúdo online da pós-graduação ISSCA EUA" },
+  { tag: "Opção 1", text: "Certificação EAD ISSCA Brasil, com 360 horas e 12 módulos" },
+  { tag: "Opção 2", text: "Certificação EAD ISSCA Brasil + conteúdo online da certificação ISSCA EUA" },
   { tag: "Corpo docente", text: "Professores nacionais e internacionais" },
   {
     tag: "Complemento opcional",
@@ -68,7 +68,7 @@ export default function Benefits() {
               Uma formação <span className="text-gradient">completa e transformadora</span>
             </>
           }
-          description="Cada etapa foi pensada para que você saia da pós-graduação pronto para aplicar, ensinar e liderar."
+          description="Um percurso para ampliar sua formação, discutir evidências e desenvolver o raciocínio crítico em Medicina Regenerativa."
         />
 
         {/* métricas */}

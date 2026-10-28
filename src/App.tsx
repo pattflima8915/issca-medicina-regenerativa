@@ -3,6 +3,7 @@ import { cn } from "@/utils/cn";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import SocialProof from "./components/SocialProof";
+import Certification from "./components/Certification";
 import Features from "./components/Features";
 import Showcase from "./components/Showcase";
 import Benefits from "./components/Benefits";
@@ -63,6 +64,7 @@ export default function App() {
         <Hero />
         <SocialProof />
         <Features />
+        <Certification />
         <Showcase />
         <Benefits />
         <Cancun />

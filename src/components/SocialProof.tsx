@@ -23,7 +23,7 @@ export default function SocialProof() {
     >
       <Reveal className="mx-auto max-w-7xl px-5 sm:px-8">
         <p className="text-center text-[11px] font-semibold uppercase tracking-[0.26em] text-slate-500">
-          Tudo o que você domina ao final da formação
+          Temas que você vai estudar na formação
         </p>
       </Reveal>
 

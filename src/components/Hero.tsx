@@ -33,20 +33,14 @@ export default function Hero() {
             className="anim-rise mt-7 font-display text-[clamp(2.3rem,6vw,4.25rem)] font-extrabold leading-[1.02] tracking-[-0.042em] text-white"
             style={{ animationDelay: "180ms" }}
           >
-            Seja referência em <span className="text-shimmer">Medicina Regenerativa</span> com a
-            formação ISSCA Brasil
+            <span className="text-shimmer">Medicina Regenerativa:</span> conhecimento para avaliar evidências e ampliar sua formação
           </h1>
 
           <p
             className="anim-rise mt-7 max-w-xl text-[16px] leading-relaxed text-slate-400 sm:text-[18px]"
             style={{ animationDelay: "300ms" }}
           >
-            <strong className="font-semibold text-slate-100">360 horas</strong> de conteúdo em{" "}
-            <strong className="font-semibold text-slate-100">12 módulos EAD</strong>, com professores
-            nacionais e internacionais. A ISSCA é uma Instituição Educacional que há{" "}
-            <strong className="font-semibold text-slate-100">17 anos</strong> trabalha com Medicina
-            Regenerativa no mundo, atuando em mais de 25 países, com a inovação como meta para a
-            formação médica.
+            Certificação para médicos, sob responsabilidade da ISSCA Internacional, com 360 horas e 12 módulos EAD. Conteúdo com professores nacionais e internacionais, webinar ao vivo mensal, fórum de discussão e mentoria em grupo.
           </p>
 
           <div
@@ -54,12 +48,12 @@ export default function Hero() {
             style={{ animationDelay: "420ms" }}
           >
             <Button href="#inscricao" size="lg">
-              Receber informações
+              Receber a ementa completa
               <IconArrow className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Button>
-            <Button href="#modulos" variant="outline" size="lg">
+            <Button href="https://wa.me/5541995337000" variant="outline" size="lg">
               <IconBook className="h-4 w-4 text-gold-300" />
-              Ver os 12 módulos
+              Conversar sobre matrícula
             </Button>
           </div>
 
@@ -69,7 +63,7 @@ export default function Hero() {
           >
             <span className="inline-flex items-center gap-2">
               <IconVideo className="h-4 w-4 text-blue-400" />
-              100% EAD, no seu ritmo
+              EAD + encontros mensais ao vivo
             </span>
             <span className="inline-flex items-center gap-2">
               <IconUsers className="h-4 w-4 text-blue-400" />
@@ -116,9 +110,9 @@ export default function Hero() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/30 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-6 pb-28">
-                <p className="font-display text-sm font-semibold text-white">Ciência aplicada, prática real</p>
+                <p className="font-display text-sm font-semibold text-white">Atualização e discussão científica</p>
                 <p className="mt-1 text-[13px] text-slate-300">
-                  Formação ISSCA: teoria rigorosa e vivência clínica
+                  Fundamentos, aplicações e pesquisa em Medicina Regenerativa
                 </p>
               </div>
             </div>

@@ -4,25 +4,27 @@ import { Reveal, SectionHeading } from "./primitives";
 import { IconChevron } from "./icons";
 
 const faqs = [
+  { q: "Qual é a natureza da formação?", a: "É uma certificação para médicos, sob responsabilidade da ISSCA Internacional, com 360 horas e 12 módulos. Consulte a coordenação para conhecer as condições de emissão do certificado e os critérios de conclusão." },
+  { q: "Há trabalho final e quais são os critérios de conclusão?", a: "A coordenação orientará sobre avaliações, participação nas atividades e eventual trabalho final. Confirme esses requisitos antes da matrícula." },
   {
     q: "Qual é a carga horária e como o curso é organizado?",
-    a: "A pós-graduação tem 360 horas de conteúdo, distribuídas em 12 módulos organizados em três eixos: Fundamentos e terapias (módulos 1 a 3), Aplicações clínicas (módulos 4 a 10) e Fronteiras e pesquisa (módulos 11 e 12).",
+    a: "A certificação tem 360 horas de conteúdo, distribuídas em 12 módulos organizados em três eixos: Fundamentos e terapias (módulos 1 a 3), Aplicações clínicas (módulos 4 a 10) e Fronteiras e pesquisa (módulos 11 e 12).",
   },
   {
     q: "As aulas são presenciais ou a distância?",
-    a: "Os 12 módulos são 100% EAD, para você estudar no seu ritmo e conciliar com a rotina de consultório e hospital.",
+    a: "O programa combina conteúdo EAD com webinar ao vivo mensal, fórum sobre o módulo do mês, atividade dirigida para elaboração de protocolos próprios e discussão em grupo com mentoria mensal.",
   },
   {
     q: "O que é a imersão prática em Cancún?",
     a: "É uma semana presencial opcional no Cellular Hope Institute (Cellular Institute), em Cancún, para aprender na prática as aplicações regenerativas mais atuais. Não está incluída na formação base e tem valor à parte.",
   },
   {
-    q: "O que inclui o acesso ao conteúdo da pós ISSCA americana?",
-    a: "É um complemento online opcional: o conteúdo da pós-graduação da ISSCA dos Estados Unidos, com os melhores especialistas do mundo. Ele está incluído na Opção 2 da matrícula.",
+    q: "O que inclui o acesso ao conteúdo da formação ISSCA americana?",
+    a: "É um complemento online opcional: o conteúdo da certificação da ISSCA dos Estados Unidos, com os professores internacionais. Ele está incluído na Opção 2 da matrícula.",
   },
   {
     q: "Quais são as opções de investimento?",
-    a: "A Opção 1 é a pós-graduação EAD ISSCA Brasil, em 12 parcelas mensais de R$ 2.500,00. A Opção 2 combina a pós EAD ISSCA Brasil com o conteúdo da pós ISSCA EUA, em 12 parcelas mensais de R$ 4.200,00.",
+    a: "A Opção 1 é a certificação EAD ISSCA Brasil, em 12 parcelas mensais de R$ 2.500,00. A Opção 2 combina a certificação EAD ISSCA Brasil com o conteúdo da formação ISSCA EUA, em 12 parcelas mensais de R$ 4.200,00.",
   },
   {
     q: "Quem são os professores?",

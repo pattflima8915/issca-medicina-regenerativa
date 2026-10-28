@@ -10,7 +10,7 @@ const plans = [
   {
     id: "opcao-1",
     label: "Opção 1",
-    title: "Pós-graduação EAD ISSCA Brasil",
+    title: "Certificação EAD ISSCA Brasil",
     monthly: 2500,
     highlight: false,
     badge: null as string | null,
@@ -25,14 +25,14 @@ const plans = [
   {
     id: "opcao-2",
     label: "Opção 2",
-    title: "Pós EAD ISSCA Brasil + conteúdo da pós ISSCA EUA",
+    title: "Certificação EAD ISSCA Brasil + conteúdo da formação ISSCA EUA",
     monthly: 4200,
     highlight: true,
     badge: "Mais completa",
     features: [
       "Tudo da Opção 1",
-      "Acesso online ao conteúdo da pós-graduação ISSCA americana",
-      "Conteúdo com os melhores especialistas do mundo",
+      "Acesso online ao conteúdo da certificação ISSCA americana",
+      "Conteúdo com os professores internacionais",
       "Visão internacional da Medicina Regenerativa",
     ],
   },
@@ -89,7 +89,7 @@ export default function Pricing() {
                     </p>
                   </div>
 
-                  <Button href={`https://wa.me/5541995337000?text=${encodeURIComponent(`Olá! Tenho interesse em fazer a matrícula na ${p.label} da pós-graduação ISSCA Brasil.`)}`} variant={p.highlight ? "primary" : "outline"} className="mt-8 w-full">
+                  <Button href={`https://wa.me/5541995337000?text=${encodeURIComponent(`Olá! Tenho interesse em fazer a matrícula na ${p.label} da certificação ISSCA Brasil.`)}`} variant={p.highlight ? "primary" : "outline"} className="mt-8 w-full">
                     Fazer matrícula · WhatsApp
                   </Button>
 
@@ -143,9 +143,9 @@ export default function Pricing() {
                   <IconGlobe className="h-5 w-5" />
                 </span>
                 <div>
-                  <p className="font-display text-[15.5px] font-bold text-white">Acesso à pós ISSCA EUA</p>
+                  <p className="font-display text-[15.5px] font-bold text-white">Acesso à formação ISSCA EUA</p>
                   <p className="mt-1.5 text-[13.5px] leading-relaxed text-slate-400">
-                    Conteúdo online da pós-graduação ISSCA americana. Incluído na Opção 2.
+                    Conteúdo online da certificação ISSCA americana. Incluído na Opção 2.
                   </p>
                 </div>
               </div>

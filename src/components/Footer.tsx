@@ -99,7 +99,7 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col gap-4 border-t border-white/[0.06] pt-8 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-[12.5px] text-slate-600">
-            © {new Date().getFullYear()} ISSCA Brasil · Pós-Graduação EAD em Medicina Regenerativa. Todos os direitos
+            © {new Date().getFullYear()} ISSCA Brasil · Certificação EAD em Medicina Regenerativa. Todos os direitos
             reservados.
           </p>
           <p className="text-[12.5px] text-slate-600">Conteúdo destinado a profissionais de saúde habilitados.</p>

@@ -2,7 +2,7 @@ import { Button, Reveal } from "./primitives";
 import { IconCheck, IconPin, IconPlane, IconSpark, IconUsers } from "./icons";
 
 const IMG =
-  "https://images.pexels.com/photos/20210509/pexels-photo-20210509.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=1400";
+  "https://images.pexels.com/photos/20210509/pexels-photo-20210509.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=1400&dpr=1";
 
 const pillars = [
   {
@@ -32,6 +32,9 @@ export default function Cancun() {
               src={IMG}
               alt="Vista aérea do litoral de Cancún com águas turquesa e resorts à beira-mar"
               loading="lazy"
+              decoding="async"
+              width={1400}
+              height={900}
               className="absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-[1.6s] ease-out group-hover:scale-105"
             />
             <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink-950 via-ink-950/80 to-ink-950/30" />

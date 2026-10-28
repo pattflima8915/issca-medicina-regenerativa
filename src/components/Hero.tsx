@@ -2,8 +2,10 @@ import { Aurora, Button, CountUp, Eyebrow } from "./primitives";
 import { IssCaLogo } from "./Logo";
 import { IconArrow, IconBook, IconPin, IconPlane, IconUsers, IconVideo } from "./icons";
 
+// dpr trimmed from 2 to 1.5: cuts transferred bytes for the LCP image while
+// still looking sharp on retina screens at the rendered size.
 const HERO_IMG =
-  "https://images.pexels.com/photos/8532858/pexels-photo-8532858.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1100&w=820";
+  "https://images.pexels.com/photos/8532858/pexels-photo-8532858.jpeg?auto=compress&cs=tinysrgb&dpr=1.5&h=1100&w=820";
 
 const stats = [
   { value: 360, suffix: "h", label: "Carga horária" },
@@ -82,7 +84,7 @@ export default function Hero() {
             {stats.map((s) => (
               <div key={s.label} className="bg-ink-950/70 px-4 py-5 backdrop-blur-sm">
                 <dt className="font-display text-2xl font-extrabold tracking-tight text-white sm:text-[1.6rem]">
-                  <CountUp to={s.value} suffix={s.suffix} />
+                  <CountUp to={s.value} suffix={s.suffix} immediate />
                 </dt>
                 <dd className="mt-1 text-[10.5px] font-medium uppercase tracking-[0.12em] text-slate-500">
                   {s.label}
@@ -104,6 +106,8 @@ export default function Hero() {
                 src={HERO_IMG}
                 alt="Médico pesquisador analisando amostras em laboratório de Medicina Regenerativa"
                 loading="eager"
+                fetchPriority="high"
+                decoding="async"
                 width={820}
                 height={1100}
                 className="h-[26rem] w-full object-cover transition-transform duration-[1.4s] ease-out group-hover:scale-105 sm:h-[32rem]"

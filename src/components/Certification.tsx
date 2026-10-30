@@ -2,7 +2,7 @@ import { SectionHeading } from "./primitives";
 export default function Certification() {
  const items = [
  ["Natureza da formação", "Certificação para médicos"],
- ["Instituição responsável", "ISSCA Internacional"],
+ ["Instituição responsável", "ISSCA BRASIL"],
  ["Organização", "360 horas · 12 módulos EAD · 3 eixos"],
  ["Webinar ao vivo", "Encontro mensal para aprofundar o conteúdo"],
  ["Fórum de discussão", "Discussão do tema do módulo do mês"],
@@ -17,3 +17,4 @@ export default function Certification() {
  <a href="https://wa.me/5541995337000" className="mt-6 inline-block rounded-full bg-gold-300 px-6 py-3 font-semibold text-navy-900">Conhecer as informações da certificação</a>
  </div></section>;
 }
+

@@ -40,7 +40,7 @@ export default function Hero() {
           <p
             className="mt-5 max-w-xl text-[16px] leading-relaxed text-slate-400 sm:text-[16px]"
           >
-            Certificação para médicos, sob responsabilidade da ISSCA Internacional, com 360 horas e 12 módulos EAD. Conteúdo com professores nacionais e internacionais, webinar ao vivo mensal, fórum de discussão e mentoria em grupo.
+            Certificação para médicos, sob responsabilidade da ISSCA BRASIL, com 360 horas e 12 módulos EAD. Conteúdo com professores nacionais e internacionais, webinar ao vivo mensal, fórum de discussão e mentoria em grupo.
           </p>
 
           <div

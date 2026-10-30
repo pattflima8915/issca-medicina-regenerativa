@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Aurora, Reveal } from "./primitives";
 import { IconArrow, IconBook, IconPlane, IconVideo } from "./icons";
-import { IssCaLogo } from "./Logo";
 
 const perks = [
   { icon: IconBook, text: "360 horas · 12 módulos em 3 eixos" },
@@ -125,9 +124,6 @@ export default function CTA() {
 
         <Reveal delay={150} className="mt-14 flex justify-center">
           <div className="flex flex-col items-center gap-5">
-            <div className="logo-plate rounded-2xl px-6 py-4">
-              <IssCaLogo size="md" />
-            </div>
             <p className="text-center text-[14px] text-slate-400">
               Atendimento em São Paulo ·{" "}
               <a href="tel:+5541995337000" className="font-semibold text-white transition-colors hover:text-gold-200">

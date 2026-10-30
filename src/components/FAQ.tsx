@@ -4,7 +4,7 @@ import { Reveal, SectionHeading } from "./primitives";
 import { IconChevron } from "./icons";
 
 const faqs = [
-  { q: "Qual é a natureza da formação?", a: "É uma certificação para médicos, sob responsabilidade da ISSCA Internacional, com 360 horas e 12 módulos. Consulte a coordenação para conhecer as condições de emissão do certificado e os critérios de conclusão." },
+  { q: "Qual é a natureza da formação?", a: "É uma certificação com formação para médicos, com 360 horas e 12 módulos. Consulte a coordenação para conhecer as condições de emissão do certificado e os critérios de conclusão." },
   { q: "Há trabalho final e quais são os critérios de conclusão?", a: "A coordenação orientará sobre avaliações, participação nas atividades e eventual trabalho final. Confirme esses requisitos antes da matrícula." },
   {
     q: "Qual é a carga horária e como o curso é organizado?",
@@ -137,3 +137,4 @@ export default function FAQ() {
     </section>
   );
 }
+

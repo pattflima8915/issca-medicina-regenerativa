@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState, type FormEvent } from "react";
 import { Aurora, Reveal } from "./primitives";
 import { IconArrow, IconBook, IconPlane, IconVideo } from "./icons";
 
@@ -9,12 +9,34 @@ const perks = [
 ];
 
 export default function CTA() {
-  const [origin, setOrigin] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-  useEffect(() => {
-    setOrigin(window.location.origin);
-    setSubmitted(new URLSearchParams(window.location.search).get("enviado") === "1");
-  }, []);
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [whatsappUrl, setWhatsappUrl] = useState("https://wa.me/5541995337000");
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (status === "sending") return;
+    const data = new FormData(event.currentTarget);
+    const message = `Olá! Gostaria de informações sobre a formação ISSCA Brasil.\nNome: ${data.get("nome")}\nE-mail: ${data.get("email")}\nCRM / UF: ${data.get("crm")}\nWhatsApp: ${data.get("tel")}\nEspecialidade: ${data.get("esp")}`;
+    setWhatsappUrl(`https://wa.me/5541995337000?text=${encodeURIComponent(message)}`);
+    setStatus("sending");
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 15000);
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/pyissca@gmail.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(Object.fromEntries(data.entries())),
+        signal: controller.signal,
+      });
+      const result = await response.json();
+      if (!response.ok || (result.success !== true && result.success !== "true")) throw new Error("Submission failed");
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    } finally {
+      window.clearTimeout(timeout);
+    }
+  }
   return (
     <section id="inscricao" className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
@@ -51,19 +73,23 @@ export default function CTA() {
 
               {/* formulário */}
               <div className="glass rounded-[1.5rem] p-6 sm:p-8">
-                  <form action="https://formsubmit.co/pyissca@gmail.com" method="POST" className="space-y-4">
+                  <form onSubmit={handleSubmit} className="space-y-4">
                     <input type="hidden" name="_subject" value="ISSCA Brasil — solicitação de informações do curso" />
                     <input type="hidden" name="_template" value="table" />
                     <input type="hidden" name="_captcha" value="false" />
-<input
-  type="hidden"
-  name="_next"
- value={`${origin}/?enviado=1#inscricao`}
-/>   {submitted && (
+{status === "success" && (
   <p role="status" className="rounded-xl bg-green-900/40 p-4 text-sm text-green-200">
-    Solicitação enviada com sucesso! Nossa equipe entrará em contato com você.
+    Solicitação aceita pelo serviço de envio. Se preferir, fale também com a coordenação pelo WhatsApp.
   </p>
-)}                 <h3 className="font-display text-[17px] font-bold tracking-tight text-white">
+)}
+{status === "error" && (
+  <div role="alert" className="rounded-xl border border-gold-300/30 bg-ink-950 p-4 text-sm text-slate-200">
+    <p>Não foi possível confirmar o envio por e-mail. Seus dados continuam preenchidos. Você pode tentar novamente ou continuar pelo WhatsApp.</p>
+    <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block font-bold text-gold-200 underline">Continuar pelo WhatsApp com meus dados</a>
+    <p className="mt-2 text-xs">A mensagem será preparada; toque em enviar no WhatsApp para concluir.</p>
+  </div>
+)}
+                 <h3 className="font-display text-[17px] font-bold tracking-tight text-white">
                       Receber informações do curso
                     </h3>
 
@@ -105,10 +131,11 @@ export default function CTA() {
 
                     <button
                       type="submit"
+                      disabled={status === "sending"}
                       className="btn-glow group relative mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 px-6 py-3.5 font-display text-[15px] font-bold tracking-tight text-navy-900 shadow-[0_12px_40px_-12px_rgba(240,178,64,0.8)] transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] disabled:opacity-70"
                     >
                       <span className="relative z-10 inline-flex items-center gap-2">
-                        Solicitar informações
+                        {status === "sending" ? "Enviando…" : "Solicitar informações"}
                         <IconArrow className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                       </span>
                     </button>

@@ -4,7 +4,8 @@ Este pacote contém o código-fonte e a pasta dist com o site compilado.
 
 GITHUB: descompacte o ZIP e envie para a raiz do repositório todo o conteúdo da pasta. Não envie a pasta node_modules. O comando de instalação é npm ci; o comando de construção é npm run build; o diretório de saída é dist. No Hostinger, configure a implantação conforme o tipo de hospedagem escolhido. Se usar Gerenciador de Arquivos, envie o conteúdo de dist, e não o projeto completo.
 
-FORMULÁRIO: usa FormSubmit para enviar informações para pyissca@gmail.com. Após publicar em um endereço web, preencha uma solicitação de teste; procure o e-mail de ativação no Gmail, confirme, e faça novo teste para verificar o recebimento. O envio ainda não foi testado em produção. O serviço processa e armazena dados conforme suas próprias políticas. Revise a política de privacidade da instituição.
+FORMULÁRIO: integrado ao Web3Forms com a chave pública fornecida para o formulário ISSCA Brasil. O destinatário é configurado na conta Web3Forms associada à chave. Após publicar, faça um envio e confira o recebimento no e-mail cadastrado, inclusive spam. O código só confirma a aceitação pelo serviço; isso não comprova entrega na caixa de entrada. Em caso de falha, mantém os campos e oferece contato via WhatsApp. A chave de formulário é pública e própria para uso no navegador.
+
 
 MATRÍCULA: os botões das duas opções abrem WhatsApp para (41) 99533-7000 com mensagem identificando a opção. Confirme esse número antes de publicar. Quando tiver os links Asaas, substitua os endereços no arquivo src/components/Pricing.tsx e publique novamente.
 

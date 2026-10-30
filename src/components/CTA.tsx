@@ -22,10 +22,14 @@ export default function CTA() {
     const controller = new AbortController();
     const timeout = window.setTimeout(() => controller.abort(), 15000);
     try {
-      const response = await fetch("https://formsubmit.co/ajax/pyissca@gmail.com", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(Object.fromEntries(data.entries())),
+        body: JSON.stringify({
+          ...Object.fromEntries(data.entries()),
+          name: data.get("nome"),
+          message,
+        }),
         signal: controller.signal,
       });
       const result = await response.json();
@@ -74,9 +78,10 @@ export default function CTA() {
               {/* formulário */}
               <div className="glass rounded-[1.5rem] p-6 sm:p-8">
                   <form onSubmit={handleSubmit} className="space-y-4">
-                    <input type="hidden" name="_subject" value="ISSCA Brasil — solicitação de informações do curso" />
-                    <input type="hidden" name="_template" value="table" />
-                    <input type="hidden" name="_captcha" value="false" />
+                    <input type="hidden" name="subject" value="ISSCA Brasil — solicitação de informações do curso" />
+                    <input type="hidden" name="access_key" value="bfde5347-6b06-49e3-a8b9-74c02084efcd" />
+                    <input type="hidden" name="from_name" value="Site ISSCA Brasil" />
+                    <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} tabIndex={-1} autoComplete="off" aria-hidden="true" />
 {status === "success" && (
   <p role="status" className="rounded-xl bg-green-900/40 p-4 text-sm text-green-200">
     Solicitação aceita pelo serviço de envio. Se preferir, fale também com a coordenação pelo WhatsApp.
@@ -141,7 +146,7 @@ export default function CTA() {
                     </button>
 
                     <p className="text-center text-[11.5px] leading-relaxed text-slate-500">
-                      Os dados serão enviados à equipe da ISSCA para contato sobre o curso, por meio do serviço FormSubmit.
+                      Os dados serão enviados à equipe da ISSCA para contato sobre o curso, por meio do serviço Web3Forms.
                     </p>
                   </form>
               </div>

@@ -11,3 +11,9 @@ MATRÍCULA: os botões das duas opções abrem WhatsApp para (41) 99533-7000 com
 FOTOS: as sete imagens recebidas estão em fotos-recebidas. Seus arquivos não identificam os professores, então não foram associadas aos nomes. Confirme cada identidade antes de adicioná-las. A lista existente também precisa de conferência quanto a nomes possivelmente repetidos.
 
 REVISÃO ANTES DE PUBLICAR: confirme preços, parcelas, turma, carga horária, ementa, docentes, certificação, condições da imersão e informações institucionais. Os valores e alegações são os do projeto original e não foram verificados. O certificado não deve ser confundido com título de especialista ou autorização de prática.
+
+
+OTIMIZAÇÃO DE CARREGAMENTO
+O build gera HTML pré-renderizado e uma pasta assets. Envie TODO o conteúdo de dist para a raiz pública da hospedagem, mantendo a pasta assets ao lado do index.html. O HTML sozinho não é suficiente. O Node é necessário apenas para compilar, não para servir o site.
+Esta versão foi preparada a partir do GitHub, que difere da versão observada no endereço temporário. Compare conteúdo, formulário e navegação antes de substituir os arquivos publicados.
+Validações: npm run build; npx tsc --noEmit; referências locais do HTML. A pontuação móvel precisa ser medida após publicar em um endereço de teste.

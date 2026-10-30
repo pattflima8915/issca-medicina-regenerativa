@@ -294,3 +294,9 @@
 
 /* Keep section headings below the fixed navigation when following anchors. */
 section[id] { scroll-margin-top: 1rem; }
+
+
+/* Keep the first screen static on mobile to avoid continuous repaints. */
+@media (max-width: 767px) {
+  #top .anim-drift, #top .anim-floaty, #top .anim-spin-slow, #top .text-shimmer { animation: none; }
+}

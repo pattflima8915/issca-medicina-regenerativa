@@ -9,15 +9,15 @@ import photo6 from "../assets/docentes/gilberto-kocerginsky.jpg";
 import photo7 from "../assets/docentes/leticia-mason.jpg";
 import photo8 from "../assets/docentes/marcio-kume.jpg";
 const faculty = [
-{ name: "Dr. Edson Luiz Peracchi", area: "Medicina integrativa e longevidade", bio: "Médico, professor e empresário, com mais de três décadas de atuação profissional. Atua em medicina integrativa, regenerativa e longevidade ativa.", registration: "CRM-PR 9086", photo: photo0 },
+{ name: "Dr. Edson Luiz Peracchi", area: "Terreno Biológico", bio: "Médico, professor e empresário, com mais de três décadas de atuação profissional. Atua em medicina integrativa, regenerativa e longevidade ativa.", registration: "", photo: photo0 },
 { name: "Dra. Gisele Werneck", area: "Saúde metabólica e longevidade", bio: "Atuação voltada à saúde metabólica, nutrição, estética e longevidade, com abordagem individualizada do cuidado.", registration: "", photo: photo1 },
 { name: "Dr. Sideny Strey", area: "Dor e neuromodulação periférica", bio: "Graduado em Medicina pela UFCSPA. Tem experiência na Atenção Básica de Saúde do Rio Grande do Sul e no ensino de neuromodulação periférica. Foi diretor do Colégio Médico de Acupuntura do RS (2016–2017) e membro da Câmara Técnica de Acupuntura do CREMERS (2022–2023).", registration: "", photo: photo2 },
 { name: "Dr. Rafael Rivas Pasco", area: "Medicina do esporte e ultrassonografia", bio: "Médico do esporte e ultrassonografista. Membro do American College of Sports Medicine.", registration: "RQE 15008 · RQE 12184", photo: photo3 },
 { name: "Dr. Rauph Batista Guimarães", area: "Neurologia e neuromodulação", bio: "Graduado em Medicina pela UFJF, com residência pela PUCPR. Atua em neurologia e neuromodulação. Fundador do Neurobrain Integrative Institute, em Curitiba, e idealizador do Projeto Paraná Sem Dor.", registration: "", photo: photo4 },
 { name: "Dra. Elizete Kaffer", area: "Dermatologia e envelhecimento saudável", bio: "Formação em Medicina, Clínica Médica e Dermatologia pela Santa Casa de São Paulo. Formação complementar em Nutriendocrinologia Funcional e Gerenciamento do Envelhecimento Saudável pela FACIS. Fundadora e diretora clínica do Instituto Shalon desde 2004.", registration: "", photo: photo5 },
 { name: "Dr. Gilberto Kocerginsky", area: "Cirurgia geral e medicina esportiva", bio: "Graduado em Medicina pela Universidade Federal Fluminense (2001), com residência em Cirurgia Geral no HFSE. Fellow in Metabolic and Nutritional Medicine (MMI-USA) e pós-graduado em Medicina Esportiva pela APM/FAN.", registration: "", photo: photo6 },
-{ name: "Dra. Letícia Vianna Mason", area: "Saúde metabólica e longevidade", bio: "Médica com atuação em medicina integrativa, saúde metabólica e longevidade, com foco no cuidado individualizado e no envelhecimento saudável.", registration: "CRM-SP 171.345", photo: photo7 },
-{ name: "Dr. Márcio Kume", area: "Dor e artrose", bio: "Mestre e doutor em Reparação Tecidual, com atuação no tratamento da dor e da artrose.", registration: "", photo: photo8 }
+{ name: "Dra. Letícia Vianna Mason", area: "Saúde metabólica e longevidade", bio: "Médica com atuação em medicina integrativa, saúde metabólica e longevidade, com foco no cuidado individualizado e no envelhecimento saudável.", registration: "", photo: photo7 },
+{ name: "Dr. Márcio Kume", area: "Ortobiológicos", bio: "Mestre e doutor em Reparação Tecidual, com atuação no tratamento da dor e da artrose.", registration: "", photo: photo8 }
 ];
 export default function Faculty() {
  return (
@@ -50,3 +50,4 @@ export default function Faculty() {
   </section>
  );
 }
+

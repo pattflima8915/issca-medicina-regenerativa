@@ -27,27 +27,24 @@ export default function Hero() {
       <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
         {/* -------- Copy -------- */}
         <div className="max-w-2xl">
-          <div className="anim-rise" style={{ animationDelay: "80ms" }}>
+          <div className="">
             <Eyebrow>Matrículas abertas · ISSCA Brasil</Eyebrow>
           </div>
 
           <h1
-            className="anim-rise mt-7 font-display text-[clamp(2rem,3.6vw,3rem)] font-extrabold leading-[1.12] tracking-[-0.042em] text-white"
-            style={{ animationDelay: "180ms" }}
+            className="mt-7 font-display text-[clamp(2rem,3.6vw,3rem)] font-extrabold leading-[1.12] tracking-[-0.042em] text-white"
           >
             <span className="text-shimmer">Medicina Regenerativa:</span> conhecimento para avaliar evidências e ampliar sua formação
           </h1>
 
           <p
-            className="anim-rise mt-5 max-w-xl text-[16px] leading-relaxed text-slate-400 sm:text-[16px]"
-            style={{ animationDelay: "300ms" }}
+            className="mt-5 max-w-xl text-[16px] leading-relaxed text-slate-400 sm:text-[16px]"
           >
-            Certificação para médicos, sob responsabilidade da ISSCA Internacional, com 360 horas e 12 módulos EAD. Conteúdo com professores nacionais e internacionais, webinar ao vivo mensal, fórum de discussão e mentoria em grupo.
+            Certificação com formação para médicos, com 360 horas e 12 módulos EAD. Conteúdo com professores nacionais e internacionais, webinar ao vivo mensal, fórum de discussão e mentoria em grupo.
           </p>
 
           <div
-            className="anim-rise mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
-            style={{ animationDelay: "420ms" }}
+            className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
           >
             <Button href="#inscricao" size="lg">
               Receber a ementa completa
@@ -60,8 +57,7 @@ export default function Hero() {
           </div>
 
           <div
-            className="anim-rise mt-9 flex flex-wrap items-center gap-x-7 gap-y-3 text-[13px] text-slate-400"
-            style={{ animationDelay: "540ms" }}
+            className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-3 text-[13px] text-slate-400"
           >
             <span className="inline-flex items-center gap-2">
               <IconVideo className="h-4 w-4 text-blue-400" />
@@ -78,8 +74,7 @@ export default function Hero() {
           </div>
 
           <dl
-            className="anim-rise mt-12 grid max-w-xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.05] sm:grid-cols-4"
-            style={{ animationDelay: "660ms" }}
+            className="mt-12 grid max-w-xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.05] sm:grid-cols-4"
           >
             {stats.map((s) => (
               <div key={s.label} className="bg-ink-950/70 px-4 py-5 backdrop-blur-sm">
@@ -95,7 +90,7 @@ export default function Hero() {
         </div>
 
         {/* -------- Visual -------- */}
-        <div className="anim-rise relative" style={{ animationDelay: "380ms" }}>
+        <div className="relative">
           <div className="relative mx-auto max-w-md lg:max-w-none">
             <div
               aria-hidden
@@ -146,3 +141,4 @@ export default function Hero() {
     </section>
   );
 }
+

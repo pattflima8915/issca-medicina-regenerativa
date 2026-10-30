@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { Aurora, Reveal } from "./primitives";
 import { IconArrow, IconBook, IconPlane, IconVideo } from "./icons";
 
@@ -9,6 +9,8 @@ const perks = [
 ];
 
 export default function CTA() {
+  const [ready, setReady] = useState(false);
+  useEffect(() => { setReady(true); }, []);
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [whatsappUrl, setWhatsappUrl] = useState("https://wa.me/5541995337000");
 
@@ -77,7 +79,7 @@ export default function CTA() {
 
               {/* formulário */}
               <div className="glass rounded-[1.5rem] p-6 sm:p-8">
-                  <form onSubmit={handleSubmit} className="space-y-4">
+                  <form action="https://api.web3forms.com/submit" method="POST" onSubmit={handleSubmit} className="space-y-4">
                     <input type="hidden" name="subject" value="ISSCA Brasil — solicitação de informações do curso" />
                     <input type="hidden" name="access_key" value="8de615d0-f114-4a0b-bbef-a1d544074829" />
                     <input type="hidden" name="from_name" value="Site ISSCA Brasil" />
@@ -136,11 +138,11 @@ export default function CTA() {
 
                     <button
                       type="submit"
-                      disabled={status === "sending"}
+                      disabled={!ready || status === "sending"}
                       className="btn-glow group relative mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 px-6 py-3.5 font-display text-[15px] font-bold tracking-tight text-navy-900 shadow-[0_12px_40px_-12px_rgba(240,178,64,0.8)] transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] disabled:opacity-70"
                     >
                       <span className="relative z-10 inline-flex items-center gap-2">
-                        {status === "sending" ? "Enviando…" : "Solicitar informações"}
+                        {!ready ? "Preparando formulário…" : status === "sending" ? "Enviando…" : "Solicitar informações"}
                         <IconArrow className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                       </span>
                     </button>

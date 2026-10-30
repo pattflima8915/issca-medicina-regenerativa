@@ -23,7 +23,7 @@ const columns = [
 ];
 
 const contacts = [
-  { label: "Telefone", value: "(41) 99533-7000", href: "tel:+5541995337000" },
+  { label: "WhatsApp", value: "(41) 99533-7000", href: "https://wa.me/5541995337000?text=Ol%C3%A1%21%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20a%20forma%C3%A7%C3%A3o%20ISSCA%20Brasil." },
   { label: "WhatsApp", value: "Falar com a coordenação", href: "https://wa.me/5541995337000" },
   { label: "Site", value: "www.issca.com.br", href: "https://www.issca.com.br" },
 ];
@@ -108,3 +108,4 @@ export default function Footer() {
     </footer>
   );
 }
+

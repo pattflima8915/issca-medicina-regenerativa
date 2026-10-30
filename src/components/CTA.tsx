@@ -126,7 +126,7 @@ export default function CTA() {
           <div className="flex flex-col items-center gap-5">
             <p className="text-center text-[14px] text-slate-400">
               Atendimento em São Paulo ·{" "}
-              <a href="tel:+5541995337000" className="font-semibold text-white transition-colors hover:text-gold-200">
+              <a href="https://wa.me/5541995337000?text=Ol%C3%A1%21%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20a%20forma%C3%A7%C3%A3o%20ISSCA%20Brasil." className="font-semibold text-white transition-colors hover:text-gold-200">
                 (41) 99533-7000
               </a>{" "}
               ·{" "}

@@ -1,4 +1,4 @@
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Aurora, Reveal } from "./primitives";
 import { IconArrow, IconBook, IconPlane, IconVideo } from "./icons";
 
@@ -12,11 +12,15 @@ export default function CTA() {
   const [ready, setReady] = useState(false);
   useEffect(() => { setReady(true); }, []);
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const submitting = useRef(false);
+  const [emailWarning, setEmailWarning] = useState(false);
   const [whatsappUrl, setWhatsappUrl] = useState("https://wa.me/5541995337000");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (status === "sending") return;
+    if (submitting.current || status === "success") return;
+    submitting.current = true;
+    setEmailWarning(false);
     const data = new FormData(event.currentTarget);
     const message = `Olá! Gostaria de informações sobre a formação ISSCA Brasil.\nNome: ${data.get("nome")}\nE-mail: ${data.get("email")}\nCRM / UF: ${data.get("crm")}\nWhatsApp: ${data.get("tel")}\nEspecialidade: ${data.get("esp")}`;
     setWhatsappUrl(`https://wa.me/5541995337000?text=${encodeURIComponent(message)}`);
@@ -24,7 +28,7 @@ export default function CTA() {
     const controller = new AbortController();
     const timeout = window.setTimeout(() => controller.abort(), 15000);
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("/salvar-cadastro.php", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
@@ -37,10 +41,30 @@ export default function CTA() {
       const result = await response.json();
       if (!response.ok || (result.success !== true && result.success !== "true")) throw new Error("Submission failed");
       setStatus("success");
+      // A falha do aviso não desfaz o cadastro confirmado no banco.
+      const emailController = new AbortController();
+      const emailTimeout = window.setTimeout(() => emailController.abort(), 15000);
+      try {
+        const emailResponse = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify({ ...Object.fromEntries(data.entries()), name: data.get("nome"), message }),
+          signal: emailController.signal,
+        });
+        const emailResult = await emailResponse.json();
+        if (!emailResponse.ok || (emailResult.success !== true && emailResult.success !== "true")) {
+          throw new Error("Email notification failed");
+        }
+      } catch {
+        setEmailWarning(true);
+      } finally {
+        window.clearTimeout(emailTimeout);
+      }
     } catch {
       setStatus("error");
     } finally {
       window.clearTimeout(timeout);
+      submitting.current = false;
     }
   }
   return (
@@ -79,19 +103,24 @@ export default function CTA() {
 
               {/* formulário */}
               <div className="glass rounded-[1.5rem] p-6 sm:p-8">
-                  <form action="https://api.web3forms.com/submit" method="POST" onSubmit={handleSubmit} className="space-y-4">
+                  <form onSubmit={handleSubmit} className="space-y-4">
                     <input type="hidden" name="subject" value="ISSCA Brasil — solicitação de informações do curso" />
                     <input type="hidden" name="access_key" value="8de615d0-f114-4a0b-bbef-a1d544074829" />
                     <input type="hidden" name="from_name" value="Site ISSCA Brasil" />
                     <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} tabIndex={-1} autoComplete="off" aria-hidden="true" />
 {status === "success" && (
   <p role="status" className="rounded-xl bg-green-900/40 p-4 text-sm text-green-200">
-    Solicitação aceita pelo serviço de envio. Se preferir, fale também com a coordenação pelo WhatsApp.
+    Cadastro salvo com sucesso. A equipe da ISSCA poderá consultar sua solicitação.
+  </p>
+)}
+{status === "success" && emailWarning && (
+  <p role="status" className="rounded-xl bg-ink-950 p-4 text-sm text-slate-200">
+    Seu cadastro está salvo, mas o aviso por e-mail não foi confirmado. Não é necessário reenviar.
   </p>
 )}
 {status === "error" && (
   <div role="alert" className="rounded-xl border border-gold-300/30 bg-ink-950 p-4 text-sm text-slate-200">
-    <p>Não foi possível confirmar o envio por e-mail. Seus dados continuam preenchidos. Você pode tentar novamente ou continuar pelo WhatsApp.</p>
+    <p>Não foi possível confirmar o cadastro. Seus dados continuam preenchidos. Você pode tentar novamente ou continuar pelo WhatsApp.</p>
     <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block font-bold text-gold-200 underline">Continuar pelo WhatsApp com meus dados</a>
     <p className="mt-2 text-xs">A mensagem será preparada; toque em enviar no WhatsApp para concluir.</p>
   </div>
@@ -138,17 +167,17 @@ export default function CTA() {
 
                     <button
                       type="submit"
-                      disabled={!ready || status === "sending"}
+                      disabled={!ready || status === "sending" || status === "success"}
                       className="btn-glow group relative mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 px-6 py-3.5 font-display text-[15px] font-bold tracking-tight text-navy-900 shadow-[0_12px_40px_-12px_rgba(240,178,64,0.8)] transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] disabled:opacity-70"
                     >
                       <span className="relative z-10 inline-flex items-center gap-2">
-                        {!ready ? "Preparando formulário…" : status === "sending" ? "Enviando…" : "Solicitar informações"}
+                        {!ready ? "Preparando formulário…" : status === "sending" ? "Enviando…" : status === "success" ? "Cadastro recebido" : "Solicitar informações"}
                         <IconArrow className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                       </span>
                     </button>
 
                     <p className="text-center text-[11.5px] leading-relaxed text-slate-500">
-                      Os dados serão enviados à equipe da ISSCA para contato sobre o curso, por meio do serviço Web3Forms.
+                      Os dados serão armazenados pela ISSCA para contato sobre o curso. Uma cópia será encaminhada por e-mail por meio do Web3Forms.
                     </p>
                   </form>
               </div>
